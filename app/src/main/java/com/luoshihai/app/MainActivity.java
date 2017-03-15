@@ -88,7 +88,15 @@ public class MainActivity extends AppCompatActivity {
             Log.w("MainActivity", "压缩前" + downsize + h + "-->" + w);
 
             Log.w("MainActivity", "压缩前:" + SystemClock.currentThreadTimeMillis());
+            //第一个参数表示压缩源 bitmap
+            //第二个参数表示压缩之后图片保存的路径
+            //第三个参数表示压缩后图片的最大的大小 单位为k
             NativeUtil.compressBitmap(bmp, mCameraFilePath, 300);
+
+            //第一个参数表示压缩源 bitmap
+            //第二个参数表示压缩之后图片保存的路径
+            //第三个参数表示是否使用是否采用哈弗曼表数据计算 品质相差5-10倍
+            NativeUtil.compressBitmap(bmp,mCameraFilePath,true);
             Log.w("MainActivity", "压缩后:" + SystemClock.currentThreadTimeMillis());
 
 
